@@ -3,6 +3,19 @@ import pickle
 import pandas as pd
 import numpy as np
 
+# Try importing xgboost, show installation instructions if not found
+try:
+    import xgboost
+except ImportError:
+    st.error("XGBoost is not installed. Please install it using: pip install xgboost")
+    st.markdown("""
+    ```
+    pip install xgboost
+    ```
+    Then restart this application.
+    """)
+    st.stop()
+
 # Set page configuration
 st.set_page_config(
     page_title="House Price Prediction",
